@@ -11,7 +11,7 @@
 * Docker
 * Discord server
 * [Discord Token](docs/images/discord_create_app_token.gif) at [discordapp.com/developers](https://discordapp.com/developers/applications/me)  (ENV_MUSICBOT_TOKEN)
-* [Developer Mode Enabled](docs/images/discord_developer_mode.gif) to enable the copy id function
+* [Developer Mode Enabled](docs/images/discord_enable_developer_mode.gif) to enable the copy id function
 * [ID for the text channel](docs/images/discord_copy_id_music_bot_text.jpg) (ENV_MUSICBOT_BINDTOCHANNELS)
 * [ID id for the voice channel](docs/images/discord_copy_id_music_bot_voice.jpg) (ENV_MUSICBOT_AUTOJOINCHANNELS)
 
