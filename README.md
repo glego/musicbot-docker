@@ -10,10 +10,10 @@
 
 * Docker
 * Discord server
-* [Discord Token](docs\images\discord_create_app_token.gif) at [discordapp.com/developers](https://discordapp.com/developers/applications/me)  (ENV_MUSICBOT_TOKEN)
-* [Developer Mode Enabled](docs\images\discord_developer_mode.gif) to enable the copy id function
-* [ID for the text channel](docs\images\discord_copy_id_music_bot_text.jpg) (ENV_MUSICBOT_BINDTOCHANNELS)
-* [ID id for the voice channel](docs\images\discord_copy_id_music_bot_voice.jpg) (ENV_MUSICBOT_AUTOJOINCHANNELS)
+* [Discord Token](docs/images/discord_create_app_token.gif) at [discordapp.com/developers](https://discordapp.com/developers/applications/me)  (ENV_MUSICBOT_TOKEN)
+* [Developer Mode Enabled](docs/images/discord_developer_mode.gif) to enable the copy id function
+* [ID for the text channel](docs/images/discord_copy_id_music_bot_text.jpg) (ENV_MUSICBOT_BINDTOCHANNELS)
+* [ID id for the voice channel](docs/images/discord_copy_id_music_bot_voice.jpg) (ENV_MUSICBOT_AUTOJOINCHANNELS)
 
 2. Run the `glego/musicbot` image in Docker
 
@@ -31,7 +31,7 @@ docker run --rm --name my-musicbot --detach -e "ENV_MUSICBOT_TOKEN=NDI4Njg0MzEyO
 docker logs my-musicbot
 ```
 
-4. [Authorize the app](docs\images\musicbot-docker-logs.jpg) with the url
+4. [Authorize the app](docs/images/musicbot-docker-logs.jpg) with the url
 
 5. Restart the container (because the bot doesn't re-join after failed attempt)
 
