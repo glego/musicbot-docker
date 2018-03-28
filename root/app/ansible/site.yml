@@ -1,0 +1,8 @@
+---
+# This playbook deploys a simple standalone MusicBot Server
+
+- hosts: musicbot-servers
+  remote_user: root
+
+  roles:
+    - musicbot

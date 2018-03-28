@@ -1,0 +1,13 @@
+---
+- name: copy venv
+  copy:
+    src: venv
+    dest: /usr/bin/venv
+    owner: root
+    group: root
+    mode: u=rwx,g=rx,o=rx
+
+- name: write options.ini
+  template: 
+    src: example_options.ini.j2 
+    dest: /app/musicbot/config/options.ini

@@ -1,0 +1,9 @@
+# Options for MusicBot for /config/options.ini
+token: "{{ lookup('env', 'ENV_MUSICBOT_TOKEN')|default('', true) }}"
+spotify_clientid: "{{ lookup('env', 'ENV_MUSICBOT_SPOTIFY_CLIENTID')|default('', true) }}"
+spotify_clientsecret: "{{ lookup('env', 'ENV_MUSICBOT_SPOTIFY_CLIENTSECRET')|default('', true) }}"
+ownerid: "{{ lookup('env', 'ENV_MUSICBOT_OWNERID')|default('auto', true) }}"
+devids: "{{ lookup('env', 'ENV_MUSICBOT_DEVIDS')|default('', true) }}"
+commandprefix: "{{ lookup('env', 'ENV_MUSICBOT_COMMANDPREFIX')|default('!', true) }}"
+bindtochannels: "{{ lookup('env', 'ENV_MUSICBOT_BINDTOCHANNELS')|default('', true) }}"
+autojoinchannels: "{{ lookup('env', 'ENV_MUSICBOT_AUTOJOINCHANNELS')|default('', true) }}"
