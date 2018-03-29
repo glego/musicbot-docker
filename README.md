@@ -52,6 +52,7 @@ docker restart my-musicbot
 * Docs
 * Configuration Options
 * Configuration Permissions
+* Run user as non root
 
 ## References
 
