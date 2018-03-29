@@ -12,17 +12,14 @@
 * Docker
 * Discord server
 * [Discord Token](docs/images/discord_create_app_token.gif) at [discordapp.com/developers](https://discordapp.com/developers/applications/me)  (ENV_MUSICBOT_TOKEN)
-* [Developer Mode Enabled](docs/images/discord_enable_developer_mode.gif) to enable the copy id function
-* [ID for the text channel](docs/images/discord_copy_id_music_bot_text.jpg) (ENV_MUSICBOT_BINDTOCHANNELS)
-* [ID id for the voice channel](docs/images/discord_copy_id_music_bot_voice.jpg) (ENV_MUSICBOT_AUTOJOINCHANNELS)
 
-### 2. Run the `glego/musicbot` image in Docker
+### 2. Run the `glego/musicbot` Docker image with the Token
+
+By providing only the token, the bot will join the same channel as the owner.
 
 ```
-docker run --rm --name my-musicbot --detach -e "ENV_MUSICBOT_TOKEN=NDI4Njg0MzEyODg4NDc1Njc4.DZ2yfQ.vF1MIFcb4CndTZlH3u7ExBhtjbo" -e "ENV_MUSICBOT_BINDTOCHANNELS=428689410847146004" -e "ENV_MUSICBOT_AUTOJOINCHANNELS=428688437772550154" glego/musicbot
+docker run --rm --name my-musicbot --detach -e "ENV_MUSICBOT_TOKEN=NDI4Njg0MzEyODg4NDc1Njc4.DZ2yfQ.vF1MIFcb4CndTZlH3u7ExBhtjbo" glego/musicbot
 ```
-
-> Replace the variables `ENV_MUSICBOT_TOKEN`, `ENV_MUSICBOT_BINDTOCHANNELS` and `ENV_MUSICBOT_AUTOJOINCHANNELS`
 
 > As the `--rm` flag was provided during the docker run command, the container will be destroyed after it's stopped
 
@@ -40,7 +37,7 @@ docker logs my-musicbot
 docker restart my-musicbot
 ```
 
-> Restart is required, because the bot doesn't re-join the channels automatically after authorization
+> Restart is required, because the bot doesn't re-join the channel automatically after authorization
 
 ## Enviroment Variables
 
@@ -49,11 +46,11 @@ docker restart my-musicbot
 
 ## To-do
 
-* Docs
-* Configuration Options
-* Configuration Permissions
-* Run user as non root
-* Add additional docker images for different base images (ubuntu/alpine/homebuild?)
+- [ ] Docs
+- [x] Configuration Options
+- [ ] Configuration Permissions
+- [ ] Run user as non roo
+- [ ] Add additional docker images for different base images (ubuntu/alpine/homebuild?)
 
 ## References
 
