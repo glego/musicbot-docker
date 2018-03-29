@@ -54,6 +54,7 @@ RUN rm -rf "$ENV_MUSICBOT_DIR/.git"
 
 ## App Image ##
 FROM ubuntu:16.04
+LABEL maintainer="glenn.goffin@gmail.com"
 
 # Prevent dpkg errors
 ENV TERM=xterm-256color
