@@ -53,6 +53,7 @@ docker restart my-musicbot
 * Configuration Options
 * Configuration Permissions
 * Run user as non root
+* Add additional docker images for different base images (ubuntu/alpine/homebuild?)
 
 ## References
 
