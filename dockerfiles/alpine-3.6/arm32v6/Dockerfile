@@ -1,4 +1,4 @@
-FROM armhf/alpine:3.6 as builder
+FROM arm32v6/alpine:3.6 as builder
 LABEL maintainer="glenn.goffin@gmail.com"
 
 RUN apk update \
@@ -34,6 +34,8 @@ RUN /bin/bash -c "source $ENV_VENV_DIR/bin/activate && \
 # Cleanup
 RUN rm -rf "$ENV_MUSICBOT_DIR/.git"
 
+## App Image ##
+FROM arm32v6/alpine:3.6
 LABEL maintainer="glenn.goffin@gmail.com"
 
 RUN apk update \
@@ -56,7 +58,7 @@ COPY --from=builder /app /app
 
 # Include root and Dockerfile
 COPY root /
-COPY dockerfiles/alpine-3.6/armhf/Dockerfile /Dockerfile
+COPY dockerfiles/alpine-3.6/arm32v6/Dockerfile /Dockerfile
 
 # Label Application
 LABEL app-name="musicbot"
