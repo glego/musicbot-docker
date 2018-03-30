@@ -1,3 +1,5 @@
+#!/bin/sh
+
 $ARG_MUSICBOT_VERSION = "1.9.7"
 
 # arm32v6 builds
