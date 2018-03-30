@@ -51,6 +51,7 @@ docker restart my-musicbot
 - [ ] Configuration Permissions
 - [ ] Run user as non roo
 - [ ] Add additional docker images for different base images (ubuntu/alpine/homebuild?)
+- [ ] Add Dockerfile for rpi (armhf)
 
 ## References
 

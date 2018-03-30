@@ -90,7 +90,7 @@ COPY --from=builder /app /app
 
 # Include root and Dockerfile
 COPY root /
-COPY Dockerfile /Dockerfile
+COPY dockerfiles/ubuntu-16.04/x86_64/Dockerfile /Dockerfile
 
 # Label Application
 LABEL app-name="musicbot"
