@@ -25,7 +25,7 @@ RUN echo "Building Musicbot Release: $ENV_MUSICBOT_VERSION " && \
 
 # Build Musicbot
 RUN python3 -m venv "$ENV_VENV_DIR"
-RUN /bin/bash -c "source $ENV_VENV_DIR/bin/activate && \
+RUN /bin/sh -c "source $ENV_VENV_DIR/bin/activate && \
                     cd "$ENV_MUSICBOT_DIR" && \
                     python3 -m pip install -U pip && \ 
                     python3 -m pip install -U -r requirements.txt && \
