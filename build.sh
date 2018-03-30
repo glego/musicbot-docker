@@ -1,6 +1,6 @@
 #!/bin/sh
 
-$ARG_MUSICBOT_VERSION = "1.9.7"
+ARG_MUSICBOT_VERSION="1.9.7"
 
 # arm32v6 builds
 docker build -t glego/musicbot:arm32v6-latest \
