@@ -3,7 +3,7 @@ LABEL maintainer="glenn.goffin@gmail.com"
 
 RUN apk update \
     && apk add --no-cache \
-        ca-certificates ffmpeg opus python3 py-virtualenv ansible
+        ca-certificates ffmpeg opus python3 libsodium py-virtualenv ansible
 
 # Install build dependencies
 RUN apk add --no-cache \
@@ -28,7 +28,8 @@ RUN python3 -m venv "$ENV_VENV_DIR"
 RUN /bin/sh -c "source $ENV_VENV_DIR/bin/activate && \
                     cd "$ENV_MUSICBOT_DIR" && \
                     python3 -m pip install -U pip && \ 
-                    python3 -m pip install -U -r requirements.txt && \
+                    python3 -m pip install --no-cache-dir -r requirements.txt && \
+                    python3 -m pip install --upgrade --force-reinstall --version websockets==4.0.1 && \
                     deactivate"
 
 # Cleanup
@@ -40,7 +41,7 @@ LABEL maintainer="glenn.goffin@gmail.com"
 
 RUN apk update \
     && apk add --no-cache \
-        ca-certificates ffmpeg opus python3 py-virtualenv ansible
+        ca-certificates ffmpeg opus python3 libsodium py-virtualenv ansible
 
 ADD https://github.com/just-containers/s6-overlay/releases/download/v1.21.4.0/s6-overlay-armhf.tar.gz /tmp/
 RUN tar xzf /tmp/s6-overlay-armhf.tar.gz -C /
