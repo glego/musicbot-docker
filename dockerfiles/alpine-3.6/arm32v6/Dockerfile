@@ -60,6 +60,11 @@ COPY --from=builder /app /app
 COPY root /
 COPY dockerfiles/alpine-3.6/arm32v6/Dockerfile /Dockerfile
 
+# Permission fix
+RUN chmod +x /entrypoint.sh && \
+    chmod +x -R /app/ansible/roles/musicbot/files && \
+    chmod +x -R /app/s6/
+
 # Label Application
 LABEL app-name="musicbot"
 LABEL app-version="$ENV_MUSICBOT_VERSION"
