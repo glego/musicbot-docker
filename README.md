@@ -1,5 +1,5 @@
 # MusicBot Docker
-[![Build Status](https://api.travis-ci.org/glego/musicbot.svg?branch=master)](https://travis-ci.org/glego/musicbot)
+[![Build Status](https://api.travis-ci.org/glego/musicbot-docker.svg?branch=master)](https://travis-ci.org/glego/musicbot-docker)
 [![Docker Stars](https://img.shields.io/docker/stars/glego/musicbot.svg?maxAge=2592000)](https://hub.docker.com/r/glego/musicbot/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/glego/musicbot.svg?maxAge=2592000)](https://hub.docker.com/r/glego/musicbot/)
 
