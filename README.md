@@ -59,7 +59,7 @@ docker restart my-musicbot
 - [ ] Run user as non roo
 - [ ] Add additional docker images for different base images (ubuntu/alpine/homebuild?)
 - [x] Add Dockerfile for rpi (armhf/arm32v6)
-- [ ] Add travis!
+- [X] Add travis!
 
 ## References
 

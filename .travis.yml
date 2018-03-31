@@ -6,7 +6,8 @@ env:
   global:
     - ARG_MUSICBOT_VERSION=1.9.7
   matrix:
-    - ARG_ARCHITECTURE=x86_64
+    - ARG_ARCHITECTURE=x86_64 ARG_DISTRIBUTION=ubuntu-16.04
+    - ARG_ARCHITECTURE=arm32v6 ARG_DISTRIBUTION=alpine-3.6
 
 services:
   - docker
@@ -22,7 +23,11 @@ before_install:
     fi
 
 install:
-  - docker build -t glego/musicbot:$TAG_LATEST -t glego/musicbot:$TAG_VERSION --build-arg ARG_MUSICBOT_VERSION=$ARG_MUSICBOT_VERSION -f ./dockerfiles/ubuntu-16.04/x86_64/Dockerfile . 
+  - >
+    if [ "$ARG_ARCHITECTURE" == "arm32v6" ]; then
+      docker run --rm --privileged multiarch/qemu-user-static:register --reset
+    fi
+  - docker build -t glego/musicbot:$TAG_LATEST -t glego/musicbot:$TAG_VERSION --build-arg ARG_MUSICBOT_VERSION=$ARG_MUSICBOT_VERSION -f ./dockerfiles/$ARG_DISTRIBUTION/$ARG_ARCHITECTURE/Dockerfile . 
 
 script:
   - docker images -a
