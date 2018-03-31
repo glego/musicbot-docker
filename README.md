@@ -18,10 +18,17 @@
 By providing only the token, the bot will join the same channel as the owner.
 
 ```
-docker run --rm --name my-musicbot --detach -e "ENV_MUSICBOT_TOKEN=NDI4Njg0MzEyODg4NDc1Njc4.DZ2yfQ.vF1MIFcb4CndTZlH3u7ExBhtjbo" glego/musicbot
+docker run --rm --name my-musicbot --detach -e "ENV_MUSICBOT_TOKEN=NDI4Njg0MzEyODg4NDc1Njc4.DZ2yfQ.vF1MIFcb4CndTZlH3u7ExBhtjbo" glego/musicbot:latest
+```
+
+Raspberry Pi 2/3 
+```
+docker run --rm --name my-musicbot --detach -e "ENV_MUSICBOT_TOKEN=NDI4Njg0MzEyODg4NDc1Njc4.DZ2yfQ.vF1MIFcb4CndTZlH3u7ExBhtjbo" -e "ENV_MUSICBOT_USEEXPERIMENTALEQUALIZATION=no" glego/musicbot:arm32v6-latest
 ```
 
 > As the `--rm` flag was provided during the docker run command, the container will be destroyed after it's stopped
+
+> For the Raspberry Pi the Equalizer has been disabled because of the playtime delay (will be fixed in future release)
 
 ### 3. Check the `docker logs` for the authorization url
 
@@ -51,6 +58,8 @@ docker restart my-musicbot
 - [ ] Configuration Permissions
 - [ ] Run user as non roo
 - [ ] Add additional docker images for different base images (ubuntu/alpine/homebuild?)
+- [x] Add Dockerfile for rpi (armhf/arm32v6)
+- [ ] Add travis! :D
 
 ## References
 
