@@ -56,11 +56,10 @@ docker restart my-musicbot
 - [ ] Docs
 - [x] Configuration Options
 - [ ] Configuration Permissions
-- [ ] Run user as non roo
-- [ ] Add additional docker images for different base images (ubuntu/alpine/homebuild?)
+- [ ] Run user as non root
 - [x] Add Dockerfile for rpi (armhf/arm32v6)
 - [x] Add travis!
-- [ ] Add qemu image for travis multiarch crosscompile
+- [x] Crosscompile for Raspberry Pi (using resin rpi-raspbian incl. qemu)
 
 ## References
 
