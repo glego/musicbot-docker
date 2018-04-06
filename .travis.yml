@@ -18,7 +18,7 @@ services:
 
 before_install:
   - > 
-    if [ "$ARG_ARCHITECTURE" == "x86_64" ]; then
+    if [ "$ARG_ARCHITECTURE" == "x86_64" ] ; then
       TAG_LATEST=latest
       TAG_VERSION=$ARG_MUSICBOT_VERSION
     else
@@ -28,7 +28,7 @@ before_install:
 
 install:
   - >
-    if [ "$ARG_ARCHITECTURE" == "arm32v6" ]; then
+    if [ "$ARG_ARCHITECTURE" == "arm32v6" ] || [ "$ARG_ARCHITECTURE" == "armhf" ]; then
       docker run --rm --privileged multiarch/qemu-user-static:register --reset
     fi
   - docker build -t glego/musicbot:$TAG_LATEST -t glego/musicbot:$TAG_VERSION --build-arg ARG_MUSICBOT_VERSION=$ARG_MUSICBOT_VERSION -f ./dockerfiles/$ARG_DISTRIBUTION/$ARG_ARCHITECTURE/Dockerfile . 
