@@ -7,11 +7,11 @@ env:
     - ARG_MUSICBOT_VERSION=1.9.7
   matrix:
     - ARG_ARCHITECTURE=x86_64 ARG_DISTRIBUTION=ubuntu-16.04
-    - ARG_ARCHITECTURE=arm32v6 ARG_DISTRIBUTION=alpine-3.6
+    - ARG_ARCHITECTURE=armhf ARG_DISTRIBUTION=resin-raspbian-9
 
 matrix:
   allow_failures:
-    - env: ARG_ARCHITECTURE=arm32v6 ARG_DISTRIBUTION=alpine-3.6
+    - env: ARG_ARCHITECTURE=armhf ARG_DISTRIBUTION=resin-raspbian-9
     
 services:
   - docker
