@@ -25,6 +25,7 @@ before_install:
 install:
   - >
     if [ "$ARG_ARCHITECTURE" == "arm32v6" ] || [ "$ARG_ARCHITECTURE" == "armhf" ]; then
+      wget https://github.com/multiarch/qemu-user-static/releases/download/v2.11.0/x86_64_qemu-arm-static.tar.gz
       docker run --rm --privileged multiarch/qemu-user-static:register --reset
     fi
   - docker build -t glego/musicbot:$TAG_LATEST -t glego/musicbot:$TAG_VERSION --build-arg ARG_MUSICBOT_VERSION=$ARG_MUSICBOT_VERSION -f ./dockerfiles/$ARG_DISTRIBUTION/$ARG_ARCHITECTURE/Dockerfile . 
