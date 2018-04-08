@@ -1,6 +1,9 @@
 FROM arm32v6/alpine:3.6 as builder
 LABEL maintainer="glenn.goffin@gmail.com"
 
+# Add qemu-user-static binary for x86_64 builders
+ADD x86_64_qemu-arm-static.tar.gz /usr/bin/
+
 RUN apk update \
     && apk add --no-cache \
         ca-certificates ffmpeg opus python3 libsodium py-virtualenv ansible
@@ -38,6 +41,9 @@ RUN rm -rf "$ENV_MUSICBOT_DIR/.git"
 ## App Image ##
 FROM arm32v6/alpine:3.6
 LABEL maintainer="glenn.goffin@gmail.com"
+
+# Add qemu-user-static binary for x86_64 builders
+ADD x86_64_qemu-arm-static.tar.gz /usr/bin/
 
 RUN apk update \
     && apk add --no-cache \
