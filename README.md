@@ -2,6 +2,7 @@
 [![Build Status](https://api.travis-ci.org/glego/musicbot-docker.svg?branch=master)](https://travis-ci.org/glego/musicbot-docker)
 [![Docker Stars](https://img.shields.io/docker/stars/glego/musicbot.svg?maxAge=2592000)](https://hub.docker.com/r/glego/musicbot/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/glego/musicbot.svg?maxAge=2592000)](https://hub.docker.com/r/glego/musicbot/)
+[![Docker Layers](https://images.microbadger.com/badges/image/glego/musicbot.svg)](https://microbadger.com/images/glego/musicbot "Get your own image badge on microbadger.com")
 
 [`MusicBot-Docker`](https://hub.docker.com/r/glego/musicbot/) is a fully stateless and immutable Docker implementation of [`MusicBot`](https://github.com/Just-Some-Bots/MusicBot). Compared to other docker projects, the configuration is done via environment variables and does not require any configuration injection or external files. The Ansible Playbook will configure the application followed by an s6-overlay to control the application processes. The application is built inside a Python3 virtual environment [(venv)]( https://docs.python.org/3/library/venv.html), to ensure all python dependencies are within one directory.  This is important as the application is first built in one container, and then copied into another container, to make the smalletst Docker image possible.
 
