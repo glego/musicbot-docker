@@ -39,7 +39,7 @@ LABEL maintainer="glenn.goffin@gmail.com" \
 
 RUN apk update \
     && apk add --no-cache \
-        ca-certificates ffmpeg opus python3 libsodium py-virtualenv ansible && \
+        ca-certificates ffmpeg opus python3 libsodium py-virtualenv ansible wget && \
     update-ca-certificates && \
     cd "/tmp/" && \
     wget "https://github.com/just-containers/s6-overlay/releases/download/v1.21.4.0/s6-overlay-armhf.tar.gz" && \
