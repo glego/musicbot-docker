@@ -48,6 +48,13 @@ build_musicbot()
 
 build_musicbot_base()
 {
+    echo "Building musicbot base"
+    echo "Distribution: $ARG_DIST"
+    echo "Architecture: $ARG_ARCH" 
+    echo "Musicbot: $ARG_MUSICBOT_VERSION"
+    echo "Tag: $ARG_TAG" 
+    echo "Tag: $ARG_TAG_LATEST" 
+
     # musicbot-base
     docker build --no-cache \
         -t glego/musicbot-base:$ARG_TAG \
