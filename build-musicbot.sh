@@ -41,7 +41,7 @@ build_musicbot()
     # musicbot
     docker build --no-cache \
         -t glego/musicbot-base:$ARG_TAG \
-        -t glego/musicbot-base:$ARG_TAG_LATEST
+        -t glego/musicbot-base:$ARG_TAG_LATEST \
         --build-arg ARG_MUSICBOT_VERSION=$ARG_MUSICBOT_VERSION \
         -f ./dockerfiles/$ARG_DIST/$ARG_ARCH/Dockerfile .
 }
@@ -51,7 +51,7 @@ build_musicbot_base()
     # musicbot-base
     docker build --no-cache \
         -t glego/musicbot-base:$ARG_TAG \
-        -t glego/musicbot-base:$ARG_TAG_LATEST
+        -t glego/musicbot-base:$ARG_TAG_LATEST \
         --build-arg ARG_MUSICBOT_VERSION=$ARG_MUSICBOT_VERSION \
         -f ./dockerfiles/$ARG_DIST-base/$ARG_ARCH/Dockerfile .
 }
