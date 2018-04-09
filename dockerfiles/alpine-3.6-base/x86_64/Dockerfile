@@ -30,6 +30,7 @@ RUN echo "Building Musicbot Release: $ENV_MUSICBOT_VERSION " && \
     # Create checksum of the requirements
     cd "$ENV_MUSICBOT_DIR" && \
     sha1sum requirements.txt > ../requirements.sha1 && \
+    cd "/" && \
     rm -rf "$ENV_MUSICBOT_DIR"
 
 ## App Image ##
