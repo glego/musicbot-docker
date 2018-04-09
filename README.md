@@ -21,12 +21,17 @@
 By providing only the token, the bot will join the same channel as the owner.
 
 ```
-docker run --rm --name my-musicbot --detach -e "ENV_MUSICBOT_TOKEN=NDI4Njg0MzEyODg4NDc1Njc4.DZ2yfQ.vF1MIFcb4CndTZlH3u7ExBhtjbo" glego/musicbot:latest
+docker run --rm --name "my-musicbot" --detach -e "ENV_MUSICBOT_TOKEN=NDI4Njg0MzEyODg4NDc1Njc4.DZ2yfQ.vF1MIFcb4CndTZlH3u7ExBhtjbo" glego/musicbot:latest
 ```
 
 Raspberry Pi 2/3 
 ```
-docker run --rm --name my-musicbot --detach -e "ENV_MUSICBOT_TOKEN=NDI4Njg0MzEyODg4NDc1Njc4.DZ2yfQ.vF1MIFcb4CndTZlH3u7ExBhtjbo" -e "ENV_MUSICBOT_USEEXPERIMENTALEQUALIZATION=no" glego/musicbot:arm32v6-latest
+docker run --rm --name "my-musicbot" --detach -e "ENV_MUSICBOT_TOKEN=NDI4Njg0MzEyODg4NDc1Njc4.DZ2yfQ.vF1MIFcb4CndTZlH3u7ExBhtjbo" -e "ENV_MUSICBOT_USEEXPERIMENTALEQUALIZATION=no" glego/musicbot:arm32v6-latest
+```
+
+Run on a Raspberry Pi 2/3 cluster
+```
+docker service create --name "my-musicbot" -e "ENV_MUSICBOT_TOKEN=NDI4Njg0MzEyODg4NDc1Njc4.DZ2yfQ.vF1MIFcb4CndTZlH3u7ExBhtjbo" -e "ENV_MUSICBOT_USEEXPERIMENTALEQUALIZATION=no" glego/musicbot:arm32v6-latest
 ```
 
 > As the `--rm` flag was provided during the docker run command, the container will be destroyed after it's stopped
