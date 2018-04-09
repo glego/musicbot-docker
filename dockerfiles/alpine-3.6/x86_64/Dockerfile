@@ -1,4 +1,4 @@
-FROM glego/musicbot-base:arm32v6-latest
+FROM glego/musicbot-base:latest
 LABEL maintainer="glenn.goffin@gmail.com" \
         app-name="musicbot" \
         app-version="$ENV_MUSICBOT_VERSION"
@@ -29,7 +29,7 @@ RUN apk add --no-cache --virtual .build-deps \
 
 # Include root and Dockerfile
 COPY root /
-COPY dockerfiles/alpine-3.6/arm32v6/Dockerfile /Dockerfile
+COPY dockerfiles/alpine-3.6/x86_64/Dockerfile /Dockerfile
 
 # Permission fix
 RUN chmod +x /entrypoint.sh && \
