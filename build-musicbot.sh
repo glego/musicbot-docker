@@ -31,6 +31,13 @@ get_cpu_architecture()
 
 build_musicbot()
 {
+    echo "Building musicbot"
+    echo "Distribution: $ARG_DIST"
+    echo "Architecture: $ARG_ARCH" 
+    echo "Musicbot: $ARG_MUSICBOT_VERSION"
+    echo "Tag: $ARG_TAG" 
+    echo "Tag: $ARG_TAG_LATEST" 
+
     # musicbot
     docker build --no-cache \
         -t glego/musicbot-base:$ARG_TAG \
