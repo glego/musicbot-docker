@@ -37,30 +37,6 @@ build_musicbot()
         -t glego/musicbot-base:$ARG_TAG_LATEST
         --build-arg ARG_MUSICBOT_VERSION=$ARG_MUSICBOT_VERSION \
         -f ./dockerfiles/$ARG_DIST/$ARG_ARCH/Dockerfile .
-
-    if [ "$ARCH" = "armv7l" ];then
-
-        # arm32v6 musicbot build
-        docker build --no-cache \
-            -t glego/musicbot:arm32v6-alpine-3.6-$ARG_MUSICBOT_VERSION \
-            -t glego/musicbot:arm32v6-latest \
-            --build-arg ARG_MUSICBOT_VERSION=$ARG_MUSICBOT_VERSION \
-            -f ./dockerfiles/alpine-3.6/arm32v6/Dockerfile . \
-            || build_musicbot_base
-
-    elif [ "$ARCH" = "x86_64" ];then
-        # x86_64 musicbot build
-        docker build --no-cache \
-            -t glego/musicbot:alpine-3.6-$ARG_MUSICBOT_VERSION \
-            -t glego/musicbot:latest \
-            --build-arg ARG_MUSICBOT_VERSION=$ARG_MUSICBOT_VERSION \
-            -f ./dockerfiles/alpine-3.6/x86_64/Dockerfile . \
-            || build_musicbot_base
-
-    else
-        echo "ERROR: Could not find any valid architecture..."
-        exit 1 # Exit the script
-    fi
 }
 
 build_musicbot_base()
