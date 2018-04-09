@@ -10,10 +10,3 @@ install:
 
 script:
   - docker images -a
-
-after_success:
-  - >
-    if [ "$TRAVIS_BRANCH" == "master" ]; then
-      echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
-      docker push glego/musicbot
-    fi
