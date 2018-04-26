@@ -69,5 +69,5 @@ docker restart my-musicbot
 
 * https://github.com/Just-Some-Bots/MusicBot
 * [Best Practices — Ansible Documentation](http://docs.ansible.com/ansible/latest/user_guide/playbooks_best_practices.html#directory-layout)
-* [Use multi-stage builds | Docker Documentation](https://docs.docker.com/develop/develop-images/multistage-build/)
-* [Best practices for writing Dockerfiles | Docker Documentation](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+* [Use Multi-Stage Builds | Docker Documentation](https://docs.docker.com/develop/develop-images/multistage-build/)
+* [Best Practices for Writing Dockerfiles | Docker Documentation](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
